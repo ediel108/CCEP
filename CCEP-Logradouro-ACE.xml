@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?><!--File GrcLogradouroSrv.wsdl, application CCEP-Logradouro--><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="GerenciaLogradouro" targetNamespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:dal="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:fau="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:log="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sul="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:til="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:tns="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="GrcLogradouroSrv_InlineSchema2.xsd"/>
+        <binding hasEncoding="false" imported="true" name="GerenciaLogradouroSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+	
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1">
+
+<xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd0"/>
+<xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd1"/>
+<xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd2"/>
+<xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd3"/>
+<xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd4"/>
+<xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd5"/>
+<xsd:include schemaLocation="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro?xsd=xsd6"/>
+    </xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="listarLogradourosCompletosPorCepRequest">
+		<wsdl:part element="tns:listarLogradourosCompletosPorCepRequest" name="payload"/>
+		<wsdl:part element="inf:Information" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="listarLogradourosCompletosPorCepResponse">
+		<wsdl:part element="tns:listarLogradourosCompletosPorCepResponse" name="payload"/>
+	</wsdl:message>
+	
+	<wsdl:message name="listarLogradourosPorCepRequest">
+		<wsdl:part element="tns:listarLogradourosPorCepRequest" name="payload"/>
+		<wsdl:part element="inf:Information" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="listarLogradourosPorCepResponse">
+		<wsdl:part element="tns:listarLogradourosPorCepResponse" name="payload"/>
+	</wsdl:message>
+	
+	<wsdl:message name="listarLogradourosPorCepBaseRequest">
+		<wsdl:part element="tns:listarLogradourosPorCepBaseRequest" name="payload"/>
+		<wsdl:part element="inf:Information" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="listarLogradourosPorCepBaseResponse">
+		<wsdl:part element="tns:listarLogradourosPorCepBaseResponse" name="payload"/>
+	</wsdl:message>
+	
+	<wsdl:message name="listarLogradourosPorDadosLogradouroRequest">
+		<wsdl:part element="tns:listarLogradourosPorDadosLogradouroRequest" name="payload"/>
+		<wsdl:part element="inf:Information" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="listarLogradourosPorDadosLogradouroResponse">
+		<wsdl:part element="tns:listarLogradourosPorDadosLogradouroResponse" name="payload"/>
+	</wsdl:message>
+
+	<wsdl:message name="listarTiposLogradouroRequest">
+		<wsdl:part element="tns:listarTiposLogradouroRequest" name="payload"/>
+		<wsdl:part element="inf:Information" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="listarTiposLogradouroResponse">
+		<wsdl:part element="tns:listarTiposLogradouroResponse" name="payload"/>
+	</wsdl:message>
+
+	<wsdl:message name="faultMessage">
+		<wsdl:part element="fau:fault" name="payload"/>
+	</wsdl:message>
+
+	<wsdl:portType name="GerenciaLogradouroPortType">
+		<wsdl:operation name="listarLogradourosCompletosPorCep">
+			<wsdl:input message="tns:listarLogradourosCompletosPorCepRequest"/>
+			<wsdl:output message="tns:listarLogradourosCompletosPorCepResponse"/>
+			<wsdl:fault message="tns:faultMessage" name="fault"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorCep">
+			<wsdl:input message="tns:listarLogradourosPorCepRequest"/>
+			<wsdl:output message="tns:listarLogradourosPorCepResponse"/>
+			<wsdl:fault message="tns:faultMessage" name="fault"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorCepBase">
+			<wsdl:input message="tns:listarLogradourosPorCepBaseRequest"/>
+			<wsdl:output message="tns:listarLogradourosPorCepBaseResponse"/>
+			<wsdl:fault message="tns:faultMessage" name="fault"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorDadosLogradouro">
+			<wsdl:input message="tns:listarLogradourosPorDadosLogradouroRequest"/>
+			<wsdl:output message="tns:listarLogradourosPorDadosLogradouroResponse"/>
+			<wsdl:fault message="tns:faultMessage" name="fault"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarTiposLogradouro">
+			<wsdl:input message="tns:listarTiposLogradouroRequest"/>
+			<wsdl:output message="tns:listarTiposLogradouroResponse"/>
+			<wsdl:fault message="tns:faultMessage" name="fault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="GerenciaLogradouroSOAP" type="tns:GerenciaLogradouroPortType">
+		<soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="listarLogradourosCompletosPorCep">
+			<soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradouroscompletosporcep"/>
+			<wsdl:input>
+				<soap11:header message="tns:listarLogradourosCompletosPorCepRequest" part="header" use="literal"/>
+				<soap11:body parts="payload" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap11:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap11:fault name="fault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorCep">
+			<soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcep"/>
+			<wsdl:input>
+				<soap11:header message="tns:listarLogradourosPorCepRequest" part="header" use="literal"/>
+				<soap11:body parts="payload" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap11:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap11:fault name="fault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorCepBase">
+			<soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcepbase"/>
+			<wsdl:input>
+				<soap11:header message="tns:listarLogradourosPorCepBaseRequest" part="header" use="literal"/>
+				<soap11:body parts="payload" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap11:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap11:fault name="fault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarLogradourosPorDadosLogradouro">
+			<soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourospordadoslogradouro"/>
+			<wsdl:input>
+				<soap11:header message="tns:listarLogradourosPorDadosLogradouroRequest" part="header" use="literal"/>
+				<soap11:body parts="payload" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap11:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap11:fault name="fault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="listarTiposLogradouro">
+			<soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listartiposlogradouro"/>
+			<wsdl:input>
+				<soap11:header message="tns:listarTiposLogradouroRequest" part="header" use="literal"/>
+				<soap11:body parts="payload" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap11:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap11:fault name="fault"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="GerenciaLogradouro">
+		<wsdl:port binding="tns:GerenciaLogradouroSOAP" name="GerenciaLogradouroSOAP">
+			<soap11:address location="http://ws-ace-ti.dsv.bradseg.com.br:7830/CCEP-Logradouro"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

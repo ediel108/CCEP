@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="090f87f3-aab0-4113-9149-d2cd67e3083e" activeEnvironment="Default" name="CCEP-Logradouro-ACEv2" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d222e3ac-1529-4696-a470-7acc527e2b35" wsaVersion="NONE" name="GerenciaLogradouroSOAP" type="wsdl" bindingName="{http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v2}GerenciaLogradouroSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/SVN/CCEP-Logradouro/trunk/CCEP-Logradouro/GrcLogradouroSrvV2.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\GrcLogradouroSrvV2.wsdl"><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\GrcLogradouroSrvV2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GerenciaLogradouro" targetNamespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v2" xmlns:dal="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:fau="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:log="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vs2="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:sul="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:til="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:tns="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="GrcLogradouroSrv_InlineSchema2.xsd"/>
+        <binding hasEncoding="false" imported="true" name="GerenciaLogradouroSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v2">
+      <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" schemaLocation="XSD/common/v1/Fault.xsd"/>
+      <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" schemaLocation="XSD/common/v1/Information.xsd"/>
+      <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/DadosLogradouro.xsd"/>
+      <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/Logradouro.xsd"/>
+      <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/SubdivisaoLogradouro.xsd"/>
+      <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/TipoLogradouro.xsd"/>
+      <xsd:import namespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" schemaLocation="GrcLogradouroSrv_InlineSchema2.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listarLogradourosCompletosPorCepRequest">
+    <wsdl:part element="vs2:listarLogradourosCompletosPorCepRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosCompletosPorCepResponse">
+    <wsdl:part element="vs2:listarLogradourosCompletosPorCepResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorCepRequest">
+    <wsdl:part element="vs2:listarLogradourosPorCepRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorCepResponse">
+    <wsdl:part element="vs2:listarLogradourosPorCepResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorCepBaseRequest">
+    <wsdl:part element="vs2:listarLogradourosPorCepBaseRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorCepBaseResponse">
+    <wsdl:part element="vs2:listarLogradourosPorCepBaseResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorDadosLogradouroRequest">
+    <wsdl:part element="vs2:listarLogradourosPorDadosLogradouroRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarLogradourosPorDadosLogradouroResponse">
+    <wsdl:part element="vs2:listarLogradourosPorDadosLogradouroResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarTiposLogradouroRequest">
+    <wsdl:part element="vs2:listarTiposLogradouroRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarTiposLogradouroResponse">
+    <wsdl:part element="vs2:listarTiposLogradouroResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="recuperarLogradouroComTipoRequest">
+    <wsdl:part element="vs2:recuperarLogradouroComTipoRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="recuperarLogradouroComTipoResponse">
+    <wsdl:part element="vs2:recuperarLogradouroComTipoResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part element="fau:fault" name="payload"/>
+  </wsdl:message>
+  <wsdl:portType name="GerenciaLogradouroPortType">
+    <wsdl:operation name="listarLogradourosCompletosPorCep">
+      <wsdl:input message="tns:listarLogradourosCompletosPorCepRequest"/>
+      <wsdl:output message="tns:listarLogradourosCompletosPorCepResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorCep">
+      <wsdl:input message="tns:listarLogradourosPorCepRequest"/>
+      <wsdl:output message="tns:listarLogradourosPorCepResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorCepBase">
+      <wsdl:input message="tns:listarLogradourosPorCepBaseRequest"/>
+      <wsdl:output message="tns:listarLogradourosPorCepBaseResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorDadosLogradouro">
+      <wsdl:input message="tns:listarLogradourosPorDadosLogradouroRequest"/>
+      <wsdl:output message="tns:listarLogradourosPorDadosLogradouroResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposLogradouro">
+      <wsdl:input message="tns:listarTiposLogradouroRequest"/>
+      <wsdl:output message="tns:listarTiposLogradouroResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarLogradouroComTipo">
+      <wsdl:input message="tns:recuperarLogradouroComTipoRequest"/>
+      <wsdl:output message="tns:recuperarLogradouroComTipoResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GerenciaLogradouroSOAP" type="tns:GerenciaLogradouroPortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listarLogradourosCompletosPorCep">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradouroscompletosporcep"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarLogradourosCompletosPorCepRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorCep">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcep"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarLogradourosPorCepRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorCepBase">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcepbase"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarLogradourosPorCepBaseRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarLogradourosPorDadosLogradouro">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourospordadoslogradouro"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarLogradourosPorDadosLogradouroRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarTiposLogradouro">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listartiposlogradouro"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarTiposLogradouroRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarLogradouroComTipo">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/recuperarLogradouroComTipo"/>
+      <wsdl:input>
+        <soap11:header message="tns:recuperarLogradouroComTipoRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GerenciaLogradouro">
+    <wsdl:port binding="tns:GerenciaLogradouroSOAP" name="GerenciaLogradouroSOAP">
+      <soap11:address location="http://wsphttp.dsv.bradseg.com.br/CCEP-Logradouro"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\common\v1\Fault.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Fault">
+    <xsd:annotation>
+      <xsd:documentation>Entidade do modelo canonico corporativo, tem como funcao padronizar o layout de excecoes.
+				Versao: 1.0
+				Autor: Leandro Estrada
+	
+				Historico de revisao:
+				1.0 13-10.2015 Criacao da Entidade</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="codigo" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="descricao" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="tipo" nillable="false" type="tns:Tipo"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="sistemaOrigem" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="servicoOrigem" nillable="false" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Tipo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NEGOCIO"/>
+      <xsd:enumeration value="TECNICO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element ibmSchExtn:docRoot="true" name="fault" type="tns:Fault"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\common\v1\Information.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="consumerType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Enterprise" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Corporacaoo que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Application" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Aplicacao que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="trackingType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="UserName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Usuario que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Key" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Chave de acesso caso necessite para autorização em outros sistemas.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identificador que ajudara na rastrabilidade da execucao do servico do inicio ao fim.
+            Preferencialmente deva ser gerado pelo consumidor.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartExecutionService" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Data e hora do inicio da requisicao ao servico</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="informationType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Consumer" type="inf:consumerType">
+        <xsd:annotation>
+          <xsd:documentation>Identificacao do consumidor do servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Tracking" type="inf:trackingType">
+        <xsd:annotation>
+          <xsd:documentation>Informacoes para auditoria e rastreabilidade.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="Information" type="inf:informationType">
+    <xsd:annotation>
+      <xsd:documentation>Elemento que sera utilizado como Header padrao para todos os servicos.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\logradouro\v1\DadosLogradouro.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:dal="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:group name="DadosLogradouroGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="siglaUnidadeFederacao" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nomeCidade" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nomeLogradouro" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="DadosLogradouroType">
+    <xsd:sequence>
+      <xsd:group ref="dal:DadosLogradouroGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\logradouro\v1\Logradouro.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:loc="http://canonico.localidade.ccep.bradseg.com.br" xmlns:log="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:sul="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:unf="http://canonico.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="SubdivisaoLogradouro.xsd"/>
+  <xsd:import namespace="http://canonico.localidade.ccep.bradseg.com.br" schemaLocation="../../localidade/v1/Localidade.xsd"/>
+  <xsd:import namespace="http://canonico.localidade.ccep.bradseg.com.br" schemaLocation="../../localidade/v1/UnidadeFederacao.xsd"/>
+  <xsd:group name="LogradouroGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigo" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nome" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nomeAbreviado" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="unidadeFederacao" type="loc:UnidadeFederacaoType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="localidade" type="loc:LocalidadeType"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="subdivisoes" type="log:SubdivisaoLogradouroType"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="LogradouroType">
+    <xsd:sequence>
+      <xsd:group ref="log:LogradouroGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\localidade\v1\Localidade.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.localidade.ccep.bradseg.com.br" xmlns:loc="http://canonico.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:group name="LocalidadeGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigo" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nome" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numeroCep" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigoLocalidadeIBGE" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="localidadeSubordinada" type="loc:LocalidadeType"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="LocalidadeType">
+    <xsd:sequence>
+      <xsd:group ref="loc:LocalidadeGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\localidade\v1\UnidadeFederacao.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.localidade.ccep.bradseg.com.br" xmlns:uf="http://canonico.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:group name="UnidadeFederacaoGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="sigla" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nome" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="siglaIBGE" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="UnidadeFederacaoType">
+    <xsd:sequence>
+      <xsd:group ref="uf:UnidadeFederacaoGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\logradouro\v1\SubdivisaoLogradouro.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:bai="http://canonico.localidade.ccep.bradseg.com.br" xmlns:log="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://canonico.localidade.ccep.bradseg.com.br" schemaLocation="../../localidade/v1/Bairro.xsd"/>
+  <xsd:group name="SubdivisaoLogradouroGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="descricaoComplemento" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numeroCep" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numeroInicialTrecho" type="xsd:double"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="numeroFinalTrecho" type="xsd:double"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="descricaoTipoUnidadeOperacionalCorreio" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="bairroInicial" type="bai:BairroType"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="bairroFinal" type="bai:BairroType"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="SubdivisaoLogradouroType">
+    <xsd:sequence>
+      <xsd:group ref="log:SubdivisaoLogradouroGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\localidade\v1\Bairro.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.localidade.ccep.bradseg.com.br" xmlns:bai="http://canonico.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:group name="BairroGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigo" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nome" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nomeAbreviado" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="BairroType">
+    <xsd:sequence>
+      <xsd:group ref="bai:BairroGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\XSD\logradouro\v1\TipoLogradouro.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:til="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:group name="TipoLogradouroGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigo" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="descricao" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="TipoLogradouroType">
+    <xsd:sequence>
+      <xsd:group ref="til:TipoLogradouroGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Logradouro\trunk\CCEP-Logradouro\GrcLogradouroSrv_InlineSchema2.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:dal="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:fau="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:log="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sul="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:til="http://canonico.logradouro.localidade.ccep.bradseg.com.br" xmlns:tns="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" schemaLocation="XSD/common/v1/Fault.xsd"/>
+  <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" schemaLocation="XSD/common/v1/Information.xsd"/>
+  <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/DadosLogradouro.xsd"/>
+  <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/Logradouro.xsd"/>
+  <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/SubdivisaoLogradouro.xsd"/>
+  <xsd:import namespace="http://canonico.logradouro.localidade.ccep.bradseg.com.br" schemaLocation="XSD/logradouro/v1/TipoLogradouro.xsd"/>
+  <xsd:complexType name="ListarLogradourosCompletosPorCepRequestType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="numeroCep" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosCompletosPorCepResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="logradouro" type="dal:LogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorCepRequestType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="numeroCep" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorCepResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="logradouro" type="dal:LogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorCepBaseRequestType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="numeroCepBase" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorCepBaseResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="logradouro" type="dal:LogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorDadosLogradouroRequestType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="dadosLogradouro" type="dal:DadosLogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarLogradourosPorDadosLogradouroResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="logradouro" type="dal:LogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarTiposLogradouroRequestType">
+    <xsd:sequence></xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarTiposLogradouroResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="1" name="tipoLogradouro" type="dal:TipoLogradouroType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RecuperarLogradouroComTipoRequestType">
+    <xsd:sequence>
+      <xsd:element name="cep" type="xsd:long"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RecuperarLogradouroComTipoResponseType">
+    <xsd:sequence>
+      <xsd:element name="cep" type="xsd:long"/>
+      <xsd:element name="tipoLogradouro" type="xsd:string"></xsd:element>
+      <xsd:element name="nomeLogradouro" type="xsd:string"></xsd:element>
+      <xsd:element name="municipio" type="xsd:string"/>
+      <xsd:element name="bairro" type="xsd:string"/>
+      <xsd:element name="uf" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosCompletosPorCepRequest" type="tns:ListarLogradourosCompletosPorCepRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosCompletosPorCepResponse" type="tns:ListarLogradourosCompletosPorCepResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorCepRequest" type="tns:ListarLogradourosPorCepRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorCepResponse" type="tns:ListarLogradourosPorCepResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorCepBaseRequest" type="tns:ListarLogradourosPorCepBaseRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorCepBaseResponse" type="tns:ListarLogradourosPorCepBaseResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorDadosLogradouroRequest" type="tns:ListarLogradourosPorDadosLogradouroRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarLogradourosPorDadosLogradouroResponse" type="tns:ListarLogradourosPorDadosLogradouroResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarTiposLogradouroRequest" type="tns:ListarTiposLogradouroRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarTiposLogradouroResponse" type="tns:ListarTiposLogradouroResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="recuperarLogradouroComTipoRequest" type="tns:RecuperarLogradouroComTipoRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="recuperarLogradouroComTipoResponse" type="tns:RecuperarLogradouroComTipoResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:endpoint>http://localhost:7800/CCEP-Logradouro/v2</con:endpoint><con:endpoint>http://ws-mb.dsv.bradseg.com.br:7800/CCEP-Logradouro/v2</con:endpoint><con:endpoint>http://wsphttp.dsv.bradseg.com.br/CCEP-Logradouro</con:endpoint></con:endpoints><con:operation id="3b0bc60e-ef08-4a71-bebc-e95f1ce49fcc" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradouroscompletosporcep" name="listarLogradourosCompletosPorCep" bindingOperationName="listarLogradourosCompletosPorCep" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2481b172-cd41-49ab-bdb2-351bb880f28a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:listarLogradourosCompletosPorCepRequest>\r
+         <v1:numeroCep>06142030</v1:numeroCep>\r
+      </v1:listarLogradourosCompletosPorCepRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradouroscompletosporcep"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="db28e627-97b9-4d04-8a9a-e64ed0b5f9b1" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcep" name="listarLogradourosPorCep" bindingOperationName="listarLogradourosPorCep" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="674f44a7-526e-4204-a936-22574b7ed707" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:listarLogradourosPorCepRequest>\r
+         <v1:numeroCep>06190200</v1:numeroCep>\r
+      </v1:listarLogradourosPorCepRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcep"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="d9dddad9-4895-4064-b895-0d5d14ca1b43" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcepbase" name="listarLogradourosPorCepBase" bindingOperationName="listarLogradourosPorCepBase" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="77226d1c-2ecf-46c7-af7c-cdb0b49c157d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1">\r
+   <soapenv:Header/>\r\r
+   <soapenv:Body>\r
+      <v1:listarLogradourosPorCepBaseRequest>\r
+         <v1:numeroCepBase>06142</v1:numeroCepBase>\r
+      </v1:listarLogradourosPorCepBaseRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourosporcepbase"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a5847a1f-03ca-4bfd-bd56-30c18e2d39ce" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourospordadoslogradouro" name="listarLogradourosPorDadosLogradouro" bindingOperationName="listarLogradourosPorDadosLogradouro" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6588c9ef-81db-400f-b391-2a6b9321f394" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:can="http://canonico.logradouro.localidade.ccep.bradseg.com.br">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:listarLogradourosPorDadosLogradouroRequest>\r
+         <v1:dadosLogradouro>\r
+            <!--Optional:-->\r
+            <can:siglaUnidadeFederacao>SP</can:siglaUnidadeFederacao>\r
+            <!--Optional:-->\r
+            <can:nomeCidade>Osasco</can:nomeCidade>\r
+            <!--Optional:-->\r
+            <can:nomeLogradouro>Julio Cortazar</can:nomeLogradouro>\r
+         </v1:dadosLogradouro>\r
+      </v1:listarLogradourosPorDadosLogradouroRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listarlogradourospordadoslogradouro"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="08e02ce7-00c1-4193-afe0-794b78896d42" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listartiposlogradouro" name="listarTiposLogradouro" bindingOperationName="listarTiposLogradouro" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2bdb615f-c432-4010-921a-9b03bb1b6202" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:listarTiposLogradouroRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/listartiposlogradouro"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="18034972-08eb-48d5-ad0c-fbb8916361fd" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/recuperarLogradouroComTipo" name="recuperarLogradouroComTipo" bindingOperationName="recuperarLogradouroComTipo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="250164f2-4fff-4b57-abd5-24a1e42848e4" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Logradouro/v2</con:endpoint><con:request><![CDATA[<tns0:Envelope xmlns:tns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf0="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:tns1="http://webservice.logradouro.ccep.bradseg.com.br/localidade/logradouro/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <tns0:Header/>
+  <tns0:Body>
+    <tns1:recuperarLogradouroComTipoRequest>
+      <tns1:cep></tns1:cep>
+    </tns1:recuperarLogradouroComTipoRequest>
+  </tns0:Body>
+</tns0:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/logradouro/v1/recuperarLogradouroComTipo"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

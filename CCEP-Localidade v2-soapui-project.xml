@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="43a2c693-f156-4fac-bacf-1364a452d6cd" activeEnvironment="Default" name="CCEP-Localidade v2" resourceRoot="${projectDir}" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f3771f80-7b94-4af9-8dcc-67b6bb4fd837" wsaVersion="NONE" name="GerenciaLocalidadeSOAP" type="wsdl" bindingName="{http://webservice.localidade.ccep.bradseg.com.br/localidade/v2}GerenciaLocalidadeSOAP" soapVersion="1_1" anonymous="optional" definition="file:/C:/SVN/CCEP-Localidade/trunk/CCEP-Localidade/GrcLocalidadeSrvV2.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\GrcLocalidadeSrvV2.wsdl"><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\GrcLocalidadeSrvV2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="GerenciaLocalidade" targetNamespace="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:fai="http://canonico.localidade.ccep.bradseg.com.br" xmlns:fau="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:loc="http://canonico.localidade.ccep.bradseg.com.br/v2" xmlns:pai="http://canonico.pais.ccep.bradseg.com.br" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedXSD location="GrcLocalidadeSrvV2_InlineSchema1.xsd"/>
+        <binding hasEncoding="false" imported="true" name="GerenciaLocalidadeSOAP" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" schemaLocation="XSD/common/v1/Fault.xsd"/>
+      <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" schemaLocation="XSD/common/v1/Information.xsd"/>
+      <xsd:import namespace="http://canonico.localidade.ccep.bradseg.com.br" schemaLocation="XSD/localidade/v1/Faixa.xsd"/>
+      <xsd:import namespace="http://canonico.pais.ccep.bradseg.com.br" schemaLocation="XSD/localidade/v2/Pais.xsd"/>
+      <xsd:include schemaLocation="GrcLocalidadeSrvV2_InlineSchema1.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="listarFaixaCEPPorMunicipioRequest">
+    <wsdl:part element="tns:listarFaixaCEPPorMunicipioRequest" name="payload"/>
+    <wsdl:part element="inf:Information" name="header"/>
+  </wsdl:message>
+  <wsdl:message name="listarFaixaCEPPorMunicipioResponse">
+    <wsdl:part element="tns:listarFaixaCEPPorMunicipioResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarPaisesRequest">
+    <wsdl:part element="tns:listarPaisesRequest" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="listarPaisesResponse">
+    <wsdl:part element="tns:listarPaisesResponse" name="payload"/>
+  </wsdl:message>
+  <wsdl:message name="faultMessage">
+    <wsdl:part element="fau:fault" name="payload"/>
+  </wsdl:message>
+  <wsdl:portType name="GerenciaLocalidadePortType">
+    <wsdl:operation name="listarFaixaCEPPorMunicipio">
+      <wsdl:input message="tns:listarFaixaCEPPorMunicipioRequest"/>
+      <wsdl:output message="tns:listarFaixaCEPPorMunicipioResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaises">
+      <wsdl:input message="tns:listarPaisesRequest"/>
+      <wsdl:output message="tns:listarPaisesResponse"/>
+      <wsdl:fault message="tns:faultMessage" name="fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GerenciaLocalidadeSOAP" type="tns:GerenciaLocalidadePortType">
+    <soap11:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listarFaixaCEPPorMunicipio">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarFaixaCEPPorMunicipio"/>
+      <wsdl:input>
+        <soap11:header message="tns:listarFaixaCEPPorMunicipioRequest" part="header" use="literal"/>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaises">
+      <soap11:operation soapAction="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarPaises"/>
+      <wsdl:input>
+        <soap11:body parts="payload" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap11:fault name="fault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GerenciaLocalidade">
+    <wsdl:port binding="tns:GerenciaLocalidadeSOAP" name="GerenciaLocalidadeSOAP">
+      <soap11:address location="http://ws-mb.dsv.bradseg.com.br/CCEP-Localidade-v2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\XSD\common\v1\Fault.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:tns="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault">
+  <xsd:complexType name="Fault">
+    <xsd:annotation>
+      <xsd:documentation>Entidade do modelo canonico corporativo, tem como funcao padronizar o layout de excecoes.
+				Versao: 1.0
+				Autor: Leandro Estrada
+	
+				Historico de revisao:
+				1.0 13-10.2015 Criacao da Entidade</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="codigo" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="descricao" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="1" name="tipo" nillable="false" type="tns:Tipo"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="sistemaOrigem" nillable="false" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="servicoOrigem" nillable="false" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="Tipo">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="NEGOCIO"/>
+      <xsd:enumeration value="TECNICO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element ibmSchExtn:docRoot="true" name="fault" type="tns:Fault"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\XSD\common\v1\Information.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information">
+  <xsd:complexType name="consumerType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Enterprise" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Corporacaoo que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Application" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Aplicacao que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="trackingType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="UserName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Usuario que esta consumindo o servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="Key" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Chave de acesso caso necessite para autorização em outros sistemas.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TransactionId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Identificador que ajudara na rastrabilidade da execucao do servico do inicio ao fim.
+            Preferencialmente deva ser gerado pelo consumidor.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="0" name="StartExecutionService" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Data e hora do inicio da requisicao ao servico</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="informationType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Consumer" type="inf:consumerType">
+        <xsd:annotation>
+          <xsd:documentation>Identificacao do consumidor do servico.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="1" minOccurs="1" name="Tracking" type="inf:trackingType">
+        <xsd:annotation>
+          <xsd:documentation>Informacoes para auditoria e rastreabilidade.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="Information" type="inf:informationType">
+    <xsd:annotation>
+      <xsd:documentation>Elemento que sera utilizado como Header padrao para todos os servicos.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\XSD\localidade\v1\Faixa.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.localidade.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fai="http://canonico.localidade.ccep.bradseg.com.br">
+  <xsd:group name="FaixaGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="inicial" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="final" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="FaixaType">
+    <xsd:sequence>
+      <xsd:group ref="fai:FaixaGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FaixasCepType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="faixaCep" type="fai:FaixaType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\XSD\localidade\v2\Pais.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://canonico.pais.ccep.bradseg.com.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pai="http://canonico.pais.ccep.bradseg.com.br">
+  <xsd:group name="PaisGroup">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigo" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="codigoPaisANS" type="xsd:long"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nome" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="sigla" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="siglaSecundaria" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="nacionalidade" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:group>
+  <xsd:complexType name="PaisesType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="pais" type="pai:PaisType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PaisType">
+    <xsd:sequence>
+      <xsd:group ref="pai:PaisGroup"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\SVN\CCEP-Localidade\trunk\CCEP-Localidade\GrcLocalidadeSrvV2_InlineSchema1.xsd</con:url><con:content><![CDATA[<xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fai="http://canonico.localidade.ccep.bradseg.com.br" xmlns:fau="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:loc="http://canonico.localidade.ccep.bradseg.com.br/v2" xmlns:pai="http://canonico.pais.ccep.bradseg.com.br" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/fault" schemaLocation="XSD/common/v1/Fault.xsd"/>
+  <xsd:import namespace="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" schemaLocation="XSD/common/v1/Information.xsd"/>
+  <xsd:import namespace="http://canonico.localidade.ccep.bradseg.com.br" schemaLocation="XSD/localidade/v1/Faixa.xsd"/>
+  <xsd:import namespace="http://canonico.pais.ccep.bradseg.com.br" schemaLocation="XSD/localidade/v2/Pais.xsd"/>
+  <xsd:complexType name="ListarFaixaCEPPorMunicipioRequestType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="siglaUnidadeFederacao" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="municipio" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarFaixaCEPPorMunicipioResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="faixasCep" type="fai:FaixasCepType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ListarPaisesRequestType">
+    <xsd:sequence/>
+  </xsd:complexType>
+  <xsd:complexType name="ListarPaisesResponseType">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="1" name="paises" type="pai:PaisesType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarFaixaCEPPorMunicipioRequest" type="tns:ListarFaixaCEPPorMunicipioRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarFaixaCEPPorMunicipioResponse" type="tns:ListarFaixaCEPPorMunicipioResponseType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarPaisesRequest" type="tns:ListarPaisesRequestType"/>
+  <xsd:element ibmSchExtn:docRoot="true" name="listarPaisesResponse" type="tns:ListarPaisesResponseType"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://dpsusc.dsv.bradseg.com.br:8000/B2B/Broker/CCEP-Localidade/v2/localidade</con:endpoint><con:endpoint>http://localhost:7802/CCEP-Localidade/v2/localidade</con:endpoint><con:endpoint>http://ws-mb.dsv.bradseg.com.br/CCEP-Localidade-v2</con:endpoint><con:endpoint>http://ws-mb.dsv.bradseg.com.br:7800/CCEP-Localidade/v2/localidade</con:endpoint></con:endpoints><con:operation id="f418bf23-edfb-48f9-9007-3fef5e95717b" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarFaixaCEPPorMunicipio" name="listarFaixaCEPPorMunicipio" bindingOperationName="listarFaixaCEPPorMunicipio" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="17c85f85-6a90-43f9-a9a0-5654eddd021a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ws-mb.dsv.bradseg.com.br:7800/CCEP-Localidade/v2/localidade</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:inf="http://bradescoseguros.com.br/canonicalmodel/canonicalmodel/v1/architecture/common/information" xmlns:v2="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v2:listarFaixaCEPPorMunicipioRequest>\r
+         <!--Optional:-->\r
+         <v2:siglaUnidadeFederacao>SP</v2:siglaUnidadeFederacao>\r
+         <!--Optional:-->\r
+         <v2:municipio>ADAMANTINA</v2:municipio>\r
+      </v2:listarFaixaCEPPorMunicipioRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarFaixaCEPPorMunicipio"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7faaf0b0-018c-43d0-97dd-bb672a8bd59a" isOneWay="false" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarPaises" name="listarPaises" bindingOperationName="listarPaises" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4bc6e9aa-75a0-4827-8935-ca1c9d20b136" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://ws-mb.dsv.bradseg.com.br:7800/CCEP-Localidade/v2/localidade</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v2="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v2:listarPaisesRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice.localidade.ccep.bradseg.com.br/localidade/v2/listarPaises"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
